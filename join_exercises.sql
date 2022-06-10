@@ -11,3 +11,5 @@ SELECT departments.dept_name AS 'Department Name', CONCAT(employees.first_name, 
 
 SELECT CONCAT(employees.first_name, ' ', employees.last_name) AS 'Full Employee Name', departments.dept_name, IF(YEAR(dept_manager.to_date) = '9999', CONCAT(employees.first_name, ' ', employees.last_name), null) AS 'Department Manager' FROM employees JOIN dept_emp ON dept_emp.emp_no = employees.emp_no JOIN departments ON departments.dept_no = dept_emp.dept_no LEFT JOIN dept_manager ON dept_manager.emp_no = dept_emp.emp_no WHERE YEAR(dept_emp.to_date) = '9999';
 
+SELECT * FROM employees LIMIT 5 OFFSET 15;
+
